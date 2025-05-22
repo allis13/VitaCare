@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ingreso Estudiantil</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+ <link rel="manifest" href="/carnet/manifest.json">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-sky-200 via-white to-indigo-200 flex items-center justify-center">
+  <div class="bg-white p-8 rounded-3xl shadow-xl w-full max-w-md border border-indigo-100">
+    
+    <!-- Logo oficial del colegio -->
+    <div class="text-center mb-6">
+      <img src="https://www.casc.ed.cr/casc/images/nuevologo.PNG" alt="Logo Colegio Agropecuario de San Carlos" class="mx-auto w-40" />
+    </div>
+
+    <!-- Título del formulario -->
+    <h2 class="text-2xl font-bold text-center text-indigo-700 mb-6">Identificación de Estudiante</h2>
+
+    <!-- Formulario con redirección -->
+    <form class="space-y-5" action="identificacion.html" method="get">
+      
+      <!-- Campo: Cédula -->
+      <div>
+        <label for="cedula" class="block text-sm font-semibold text-gray-700 mb-1">Cédula</label>
+        <input
+          type="text"
+          id="cedula"
+          name="cedula"
+          placeholder="Ingresa tu cédula"
+          class="w-full pl-4 pr-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
+          required
+        />
+      </div>
+
+      <!-- Campo: Contraseña -->
+      <div>
+        <label for="password" class="block text-sm font-semibold text-gray-700 mb-1">Contraseña</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Ingresa tu contraseña"
+          class="w-full pl-4 pr-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
+          required
+        />
+        <!-- Enlace: Olvidaste tu contraseña -->
+        <div class="text-right mt-1">
+          <a href="#" class="text-sm text-indigo-600 hover:underline">¿Olvidaste tu contraseña?</a>
+        </div>
+      </div>
+
+      <!-- Botón de ingreso -->
+      <div>
+        <button
+          type="submit"
+          class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-xl transition shadow-md"
+        >
+          Ingresar
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <script src="app.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/carnet/service-worker.js')
+      .then(reg => console.log('✅ SW registrado', reg.scope))
+      .catch(err => console.error('❌ Error SW:', err));
+  }
+</script>
+</body>
+</html>
